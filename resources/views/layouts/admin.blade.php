@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>@yield('title', 'Dashboard - Admin') </title>
+    <title>
+        @isset($title)
+            {{ $title }} |
+        @endisset
+        Dashboard
+    </title>
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
 </head>
@@ -57,8 +62,8 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         Posts
                     </a>
-                    <a class="nav-link" href="#">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <a class="nav-link" href="{{ route('categories.index') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Categories
                     </a>
                     <a class="nav-link" href="#">
