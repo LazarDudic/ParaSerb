@@ -2,8 +2,7 @@
 
 @section('content')
 
-
-    <div class="container">
+    <div class="pl-4 pr-4">
         <h1 class="mt-4">Posts</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('posts.index') }}">Posts</a></li>
@@ -24,23 +23,27 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
+                            <th>#</th>
                             <th>Tittle</th>
                             <th>Content</th>
                             <th>Slug</th>
                             <th>Image</th>
-                            <th>Publish</th>
                             <th>User</th>
                             <th>Category</th>
+                            <th>Publish</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach ($posts as $post)
                             <tr>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ substr($post->content, 0,30)  }}</td>
                                 <td>{{ $post->slug }}</td>
-                                <td><img src="{{  asset('storage/' .$post->image) }}" alt="" height="80" width="100"></td>
+                                <td><img src="{{  asset('storage/' .$post->image) }}" alt="" height="70" width="80"></td>
+                                <td>{{ $post->user->name }}</td>
+                                <td>{{ $post->category->name }}</td>
                                 <td>
                                     <form action="{{ route('post.publish', $post->id) }}" method="POST">
                                         @csrf
@@ -50,8 +53,6 @@
                                         </button>
                                     </form>
                                 </td>
-                                <td>{{ $post->user->name }}</td>
-                                <td>{{ $post->category->name }}</td>
                                 <td class="d-flex">
                                     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info mr-2">
                                         <i class="fas fa-edit"></i>
@@ -65,13 +66,15 @@
                                     </form>
                                 </td>
                             </tr>
-                            @endforeach
+                        @endforeach
                         </tbody>
                     </table>
+                    {{ $posts->links() }}
                 </div>
             </div>
         </div>
     </div>
+
 
 @endsection
 

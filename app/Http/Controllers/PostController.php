@@ -11,19 +11,18 @@ use Illuminate\Support\Str;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the posts.
      *
      * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
-        $posts = Post::orderByDesc('created_at')->get();
-
+        $posts = Post::orderByDesc('created_at')->paginate(10);
         return view('admin.posts.index')->with('posts', $posts);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new post.
      *
      * @return \Illuminate\Http\Response
      */
@@ -33,7 +32,7 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created post in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -59,19 +58,19 @@ class PostController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Post $post)
-    {
+//    /**
+//     * Display the specified post.
+//     *
+//     * @param  \App\Models\Post  $post
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function show(Post $post)
+//    {
+//
+//    }
 
-    }
-
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified post.
      *
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
@@ -84,7 +83,7 @@ class PostController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified post in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Post  $post
@@ -106,7 +105,7 @@ class PostController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified post from storage.
      *
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response

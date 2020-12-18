@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderByDesc('created_at')->get();
+        $categories = Category::orderByDesc('created_at')->paginate(10);
         return view('admin.categories.index')->with('categories', $categories);
     }
 
@@ -39,7 +39,7 @@ class CategoryController extends Controller
     {
         Category::create($request->all());
 
-        return redirect(route('cate'))->withSuccess('Category added.');
+        return redirect(route('categories.index'))->withSuccess('Category added.');
     }
 
 

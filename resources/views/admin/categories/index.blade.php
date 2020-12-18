@@ -24,6 +24,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
+                            <th>#</th>
                             <th>Name</th>
                             <th>Posts Count</th>
                             <th>Action</th>
@@ -32,6 +33,7 @@
                         <tbody>
                         @foreach ($categories as $category)
                             <tr>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->posts->count() }}</td>
                                 <td class="d-flex">
@@ -50,6 +52,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $categories->links() }}
                 </div>
             </div>
         </div>
