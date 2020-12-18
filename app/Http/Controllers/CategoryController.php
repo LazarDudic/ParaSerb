@@ -39,7 +39,7 @@ class CategoryController extends Controller
     {
         Category::create($request->all());
 
-        return redirect('categories')->withSuccess('Category successfully added.');
+        return redirect(route('cate'))->withSuccess('Category added.');
     }
 
 
@@ -66,7 +66,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        return back()->withSuccess('Category successfully updated.');
+        return back()->withSuccess('Category updated.');
     }
 
     /**
@@ -79,6 +79,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return back()->withSuccess('Category deleted successfully.');
+        return back()->withSuccess('Category deleted.');
     }
 }

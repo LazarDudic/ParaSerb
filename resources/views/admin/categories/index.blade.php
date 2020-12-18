@@ -33,7 +33,7 @@
                         @foreach ($categories as $category)
                             <tr>
                                 <td>{{ $category->name }}</td>
-                                <td></td>
+                                <td>{{ $category->posts->count() }}</td>
                                 <td class="d-flex">
                                     <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info mr-2">
                                         <i class="fas fa-edit"></i>
@@ -41,7 +41,7 @@
                                     <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn" >
+                                        <button class="btn btn-danger" >
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </form>

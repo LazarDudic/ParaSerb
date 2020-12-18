@@ -9,7 +9,7 @@
     </div>
     <div class="container ">
         <div class="row">
-            <div class="col-8">
+            <div class="col-lg-8 col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>

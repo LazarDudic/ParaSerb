@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>
         @isset($title)
             {{ $title }} |
@@ -58,7 +61,7 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('posts.index') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         Posts
                     </a>

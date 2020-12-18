@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::resource('/categories',
-        \App\Http\Controllers\CategoryController::class);
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/posts', PostController::class);
+    Route::patch('/posts/{post}/publish-unpublish', [PostController::class, 'publishOrUnpublish'])
+        ->name('post.publish');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
