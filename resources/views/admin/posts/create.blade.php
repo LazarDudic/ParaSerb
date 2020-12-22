@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <ol class="breadcrumb mt-4 mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('posts.index') }}">Posts</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('posts.show-posts') }}">Posts</a></li>
             <li class="breadcrumb-item active">{{ isset($post) ? 'Edit post' : 'Add Post' }}</li>
         </ol>
     </div>

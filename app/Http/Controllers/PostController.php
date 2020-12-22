@@ -10,16 +10,7 @@ use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the posts.
-     *
-     * @return \Illuminate\Contracts\View\View
-     */
-    public function index()
-    {
-        $posts = Post::orderByDesc('created_at')->paginate(10);
-        return view('admin.posts.index')->with('posts', $posts);
-    }
+
 
     /**
      * Show the form for creating a new post.
@@ -54,7 +45,7 @@ class PostController extends Controller
             'published_at' => $request->published_at ? now() : null
         ]);
 
-        return redirect(route('posts.index'))->withSuccess('Post added.');
+        return redirect(route('posts.show-posts'))->withSuccess('Post added.');
 
     }
 
@@ -102,40 +93,6 @@ class PostController extends Controller
 
         $post->update($data);
         return back()->withSuccess('Post updated.');
-    }
-
-    /**
-     * Remove the specified post from storage.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Post $post)
-    {
-        $post->delete();
-        $post->delete();
-        return back()->withSuccess('Post deleted.');
-
-    }
-
-    /**
-     * Publish or unpublish post.
-     * @param Post $post
-     * @return \Illuminate\Http\Response
-     */
-    public function publishOrUnpublish(Post $post)
-    {
-        if ($post->published_at == null) {
-            $post->published_at = now();
-            $post->save();
-
-            return back()->withSuccess('Post published');
-        }
-
-        $post->published_at = null;
-        $post->save();
-
-        return back()->withSuccess('Post unpublished');
     }
 
 }

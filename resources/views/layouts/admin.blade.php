@@ -8,6 +8,8 @@
     <meta name="author" content="" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <livewire:styles />
+
 
     <title>
         @isset($title)
@@ -61,7 +63,7 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-                    <a class="nav-link" href="{{ route('posts.index') }}">
+                    <a class="nav-link" href="{{ route('posts.show-posts') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         Posts
                     </a>
@@ -104,9 +106,11 @@
         </footer>
     </div>
 </div>
+
+
+<livewire:scripts />
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="{{asset('js/scripts.js')}}"></script>
-
+<script src="{{asset('js/scripts.js')}}" ></script>
 </body>
 </html>

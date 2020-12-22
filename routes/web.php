@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Livewire\Admin\Posts\Posts;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,9 @@ Auth::routes();
 
 Route::middleware('auth')->group(function () {
     Route::resource('/categories', CategoryController::class);
-    Route::resource('/posts', PostController::class);
-    Route::patch('/posts/{post}/publish-unpublish', [PostController::class, 'publishOrUnpublish'])
-        ->name('post.publish');
+    Route::get('/posts', Posts::class)->name('posts.show-posts');
+    Route::resource('/posts', PostController::class)
+        ->only(['show', 'create', 'store', 'edit', 'update']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
