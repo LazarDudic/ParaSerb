@@ -1,5 +1,8 @@
 @extends('layouts.admin', ['title' => 'Posts'])
-
+@section('head')
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
+@endsection
 @section('content')
     <div class="container-fluid">
         <ol class="breadcrumb mt-4 mb-4">
