@@ -90,9 +90,25 @@ class PostController extends Controller
             $data['image'] = $request->image->store('posts', 'public');
             $post->deleteImage();
         }
-
         $post->update($data);
         return back()->withSuccess('Post updated.');
     }
+
+    /**
+     * Remove the specified image in storage.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function removeImage(Post $post)
+    {
+        $post->deleteImage();
+        $post->image = null;
+        $post->save();
+        return back();
+    }
+
+
+
 
 }

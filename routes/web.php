@@ -27,6 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts', Posts::class)->name('posts.show-posts');
     Route::resource('/posts', PostController::class)
         ->only(['show', 'create', 'store', 'edit', 'update']);
+    Route::get('/posts/{post}/remove-image', [PostController::class, 'removeImage'])->name('posts.remove-image');
+
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

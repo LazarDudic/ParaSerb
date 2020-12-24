@@ -38,6 +38,9 @@
                                 <input type="file" name="image" value="{{ $post->image ?? old('image') ?? '' }}" class="form-control-file " id="exampleFormControlFile1">
                                 @if(isset($post->image))
                                     <img src="{{  asset('storage/' .$post->image) }}" alt="" class="mt-2" height="80" width="100">
+                                    <a href="{{ route('posts.remove-image', $post->id) }}" style="font-size: 0.8rem">
+                                        Remove Image
+                                    </a>
                                 @endif
                             </div>
                             <select class="custom-select custom-select-sm mb-2 mt-3" name="category_id">
