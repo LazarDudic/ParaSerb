@@ -10248,8 +10248,13 @@ body {
   background-color: #e9ecef;
 }
 
+.pointer {
+    font-weight: bold;
+}
+
 .pointer:hover {
     cursor: pointer;
+    color: gray;
 }
 
 

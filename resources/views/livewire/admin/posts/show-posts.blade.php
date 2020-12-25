@@ -74,12 +74,8 @@
                             <td ><img src="{{  asset('storage/' .$post->image) }}" alt="" height="60" width="90"></td>
                             <td>{{ $post->user->name }}</td>
                             <td>{{ $post->category->name }}</td>
-                            <td>
-
-                                <button wire:click="publishOrUnpublish({{ $post->id }})" class="btn btn-sm {{ $post->published_at ? 'btn-success' : 'btn-secondary'}}">
-                                    <i class="{{ $post->published_at ? 'fas fa-check-square' : 'far fa-window-close'  }}"></i>
-                                    {{ $post->published_at ? 'Yes' : 'No' }}
-                                </button>
+                            <td class="pb-0">
+                                <livewire:admin.posts.publish-post :post="$post" :key="'admin.posts.publish-post'.$post->id" />
                             </td>
                             <td>{{ $post->created_at }}</td>
                             <td class="d-flex">
