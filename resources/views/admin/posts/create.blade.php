@@ -1,7 +1,6 @@
 @extends('layouts.admin', ['title' => 'Posts'])
 @section('head')
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
+    <script src="https://cdn.tiny.cloud/1/n63k1bhpjawumspwwbxxciuhly63p6db2n7ft3vkhdrdz6n0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 @endsection
 @section('content')
     <div class="container-fluid">
@@ -71,4 +70,15 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'link',
+            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent link',
+
+        });
+    </script>
+
 @endsection
