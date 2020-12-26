@@ -27,7 +27,19 @@ class CreatePostRequest extends FormRequest
             'title' => 'required|max:255|unique:posts',
             'content' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048|nullable',
-            'category_id' => 'required|integer|exists:categories,id'
+            'category_id' => 'required|exists:categories,id'
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'category_id.required' => 'The category is required.',
         ];
     }
 }

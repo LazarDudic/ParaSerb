@@ -47,7 +47,6 @@ class PublishPost extends Component
 
     /**
      * Set a publish date and time
-     * @param Request $request
      */
     public function publishDate()
     {
@@ -58,8 +57,9 @@ class PublishPost extends Component
         $this->post->save();
         $this->getPublishDate();
         $this->showDateInput();
+        session()->flash('success', 'Post has been set for publish at '.$this->post->published_at);
+        return redirect(route('posts.show-posts'));
     }
-
 
     /**
      * Set post to be published or unpublished

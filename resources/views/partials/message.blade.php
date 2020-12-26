@@ -1,8 +1,6 @@
-@if($errors->any())
+@if(session()->has('error'))
     <div class="alert alert-danger">
-            @foreach ($errors->all() as $error)
-                <div>{{ $error }}</div>
-            @endforeach
+        {{ session()->get('error') }}
     </div>
 @endif
 @if (session()->has('success'))

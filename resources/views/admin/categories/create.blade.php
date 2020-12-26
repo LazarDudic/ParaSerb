@@ -17,14 +17,14 @@
                     </div>
 
                     <div class="card-body">
-                        @include('partials.message')
                         <form action="{{ isset($category) ? route('categories.update', $category->id) : route('categories.store') }}" method="POST">
                             @csrf
                             @if(isset($category)) @method('PATCH') @endif
 
                             <div class="form-group">
                                 <label for="name">Category Name:</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $category->name ?? '' }}">
+                                    <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{ $category->name ?? '' }}">
+                                @error('name')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                             </div>
 
                             <button type="submit" class="btn btn-primary">{{ isset($category) ? 'Update' : 'Add Category' }}</button>

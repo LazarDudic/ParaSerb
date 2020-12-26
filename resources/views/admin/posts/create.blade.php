@@ -25,35 +25,46 @@
 
                             <div class="form-group">
                                 <label for="name">Title:</label>
-                                    <input type="text" class="form-control" name="title" value="{{ old('title') ??  $post->title ?? '' }}">
+                                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') ??  $post->title ?? '' }}">
+                                @error('title')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+
                             </div>
                             <div class="form-group">
                                 <label for="content">Content</label>
-                                <textarea class="form-control" name="content" id="content" rows="6">{{ old('content') ?? $post->content ?? '' }}</textarea>
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" rows="6">{{ old('content') ?? $post->content ?? '' }}</textarea>
+                                @error('content')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Upload image</label>
-                                <input type="file" name="image" value="{{ $post->image ?? old('image') ?? '' }}" class="form-control-file " id="exampleFormControlFile1">
-                                @if(isset($post->image))
+                                <input type="file" name="image" value="{{ $post->image ?? old('image') ?? '' }}" class="form-control-file @error('category_id') is-invalid @enderror" id="exampleFormControlFile1">
+                                @error('image')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+
+                            @if(isset($post->image))
                                     <img src="{{  asset('storage/' .$post->image) }}" alt="" class="mt-2" height="80" width="100">
                                     <a href="{{ route('posts.remove-image', $post->id) }}" style="font-size: 0.8rem">
                                         Remove Image
                                     </a>
                                 @endif
                             </div>
-                            <select class="custom-select custom-select-sm mb-2 mt-3" name="category_id">
-                                    <option selected>Choose Category</option>
-                                @foreach($categories as $category)
-                                    <option value="{{ $category->id }}"
-                                    @if(isset($post->category->id) && $post->category->id == $category->id)
-                                        {{ 'selected' }}
-                                    @endif
-                                    >
-                                        {{ $category->name }}
-                                    </option>
-                                @endforeach
-                            </select>
+                            <div class="form-group">
+                                <select class="custom-select custom-select-sm mb-2 mt-3 @error('category_id') is-invalid @enderror" name="category_id">
+                                    <option disabled selected>Choose Category</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                        @if(isset($post->category->id) && $post->category->id == $category->id)
+                                            {{ 'selected' }}
+                                            @endif
+                                        >
+                                            {{ $category->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('category_id')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+
+                            </div>
+
+
                             <div class="form-check mt-3 mb-3">
                                 <input class="form-check-input" type="checkbox" value="{{ $post->published_at ?? '' }}"
                                        {{ isset($post->published_at) ? 'checked' : '' }}
