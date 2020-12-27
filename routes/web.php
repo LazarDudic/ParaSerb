@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Livewire\Admin\Categories\Categories;
 use App\Http\Livewire\Admin\Posts\Posts;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::resource('/categories', CategoryController::class);
     Route::get('/posts', Posts::class)->name('posts.show-posts');
+    Route::get('/categories', Categories::class)->name('categories.show-categories');
     Route::resource('/posts', PostController::class)
         ->only(['show', 'create', 'store', 'edit', 'update']);
     Route::get('/posts/{post}/remove-image', [PostController::class, 'removeImage'])->name('posts.remove-image');

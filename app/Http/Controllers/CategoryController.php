@@ -8,16 +8,6 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the categories.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function index()
-    {
-        $categories = Category::orderByDesc('created_at')->paginate(10);
-        return view('admin.categories.index')->with('categories', $categories);
-    }
 
     /**
      * Show the form for creating a new category.
@@ -39,7 +29,7 @@ class CategoryController extends Controller
     {
         Category::create($request->all());
 
-        return redirect(route('categories.index'))->withSuccess('Category added.');
+        return redirect(route('categories.show-categories'))->withSuccess('Category added.');
     }
 
 
@@ -69,16 +59,5 @@ class CategoryController extends Controller
         return back()->withSuccess('Category updated.');
     }
 
-    /**
-     * Remove the specified category from storage.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Category $category)
-    {
-        $category->delete();
 
-        return back()->withSuccess('Category deleted.');
-    }
 }

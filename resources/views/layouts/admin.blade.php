@@ -68,7 +68,7 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         Posts
                     </a>
-                    <a class="nav-link" href="{{ route('categories.index') }}">
+                    <a class="nav-link" href="{{ route('categories.show-categories') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Categories
                     </a>

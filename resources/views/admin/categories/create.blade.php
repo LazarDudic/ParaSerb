@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <ol class="breadcrumb mt-4 mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">Categories</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('categories.show-categories') }}">Categories</a></li>
             <li class="breadcrumb-item active">{{ isset($category) ? 'Edit Category' : 'Add Category' }}</li>
         </ol>
     </div>
