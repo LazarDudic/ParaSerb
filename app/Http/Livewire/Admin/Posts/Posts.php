@@ -14,6 +14,7 @@ class Posts extends Component
     public $paginate = 10;
     public $sortField = 'created_at';
     public $sortDirection = 'desc';
+    public $search;
 
 
     public function sortBy($field)
@@ -30,10 +31,19 @@ class Posts extends Component
         session()->flash('success', 'Post deleted.');
     }
 
+
     public function render()
     {
+        if (strlen($this->search) > 1) {
+            $posts = Post::search($this->search, ['title','content'])
+                ->orderBy($this->sortField, $this->sortDirection)
+                ->paginate($this->paginate);
+        }else {
+            $posts = Post::orderBy($this->sortField, $this->sortDirection)->paginate($this->paginate);
+        }
+
         return view('livewire.admin.posts.show-posts', [
-            'posts' => Post::orderBy($this->sortField, $this->sortDirection)->paginate($this->paginate)
+            'posts' => $posts
 
         ])
             ->extends('layouts.admin', ['title' => 'Posts'])

@@ -35,7 +35,7 @@
                             </label>
                         </div>
                         <div id="dataTable_filter" class="dataTables_filter">
-                            <input type="search" class="form-control-sm" placeholder="Search" aria-controls="dataTable">
+                            <input wire:model="search" type="search" class="form-control-sm" placeholder="Search" aria-controls="dataTable">
                         </div>
                     </div>
 
