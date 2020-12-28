@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\Admin\Categories\Categories;
 use App\Http\Livewire\Admin\Posts\Posts;
@@ -33,6 +34,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('/users', UserController::class);
     Route::resource('/posts', PostController::class)
         ->only(['show', 'create', 'store', 'edit', 'update']);
+    Route::resource('/profile', ProfileController::class)
+        ->only(['show', 'edit', 'update'])
+        ->parameters(['profile' => 'user']);;
 
 });
 

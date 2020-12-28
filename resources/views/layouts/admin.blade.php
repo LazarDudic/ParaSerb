@@ -80,6 +80,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                         Users
                     </a>
+                    <a class="nav-link" href="{{ route('profile.show', auth()->user()->id) }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                        Profile
+                    </a>
 
                 </div>
             </div>
