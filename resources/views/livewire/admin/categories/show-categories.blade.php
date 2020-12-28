@@ -66,7 +66,7 @@
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <button class="btn btn-danger" wire:click="delete({{ $category->id }})"
-                                        onclick="confirm('Are you sure you want to delete this post?') || event.stopImmediatePropagation()"
+                                        onclick="confirm('If you delete this category it will automatically delete all posts from this category. Are you sure?') || event.stopImmediatePropagation()"
                                         title="Delete">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
