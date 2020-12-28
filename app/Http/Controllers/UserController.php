@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Users\CreateUserRequest;
 use App\Http\Requests\Users\UpdateUserRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
 {
@@ -29,6 +30,8 @@ class UserController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('admin-access'), Response::HTTP_FORBIDDEN);
+
         return view('admin.users.create');
     }
 
@@ -60,6 +63,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        abort_if(Gate::denies('admin-access'), Response::HTTP_FORBIDDEN);
+
         return view('admin.users.create', [
             'user' => $user
         ]);
@@ -87,6 +92,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        abort_if(Gate::denies('admin-access'), Response::HTTP_FORBIDDEN);
+
         $user->delete();
         return redirect(route('users.index'))
             ->withSuccess('User deleted.');

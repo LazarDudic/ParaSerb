@@ -5,7 +5,9 @@ namespace App\Http\Livewire\Admin\Posts;
 use App\Models\Post;
 use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class PublishPost
@@ -20,6 +22,8 @@ class PublishPost extends Component
 
     public function mount(Post $post)
     {
+        abort_if(Gate::denies('admin-access'), Response::HTTP_FORBIDDEN);
+
         $this->post = $post;
         $this->getPublishDate();
     }

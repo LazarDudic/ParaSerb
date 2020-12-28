@@ -3,8 +3,10 @@
 namespace App\Http\Livewire\Admin\Posts;
 
 use App\Models\Post;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Symfony\Component\HttpFoundation\Response;
 
 class Posts extends Component
 {
@@ -25,6 +27,8 @@ class Posts extends Component
 
     public function delete($postId)
     {
+        abort_if(Gate::denies('admin-access'), Response::HTTP_FORBIDDEN);
+
         $post = Post::findOrFail($postId);
         $post->deleteImage();
         $post->delete();

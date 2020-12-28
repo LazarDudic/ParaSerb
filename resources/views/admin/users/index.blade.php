@@ -15,7 +15,9 @@
                 Users
             </div>
             <div>
-                <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
+                @can('admin-access')
+                    <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
+                @endcan
             </div>
         </div>
 
@@ -31,7 +33,7 @@
                         <th>Email</th>
                         <th>Role</th>
                         <th>Created At</th>
-                        <th>Action</th>
+                        @can('admin-access') <th>Action</th> @endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -40,23 +42,27 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->role }}</td>
+                            <td>{{ ucfirst($user->role)  }}</td>
                             <td>{{ $user->created_at }}</td>
-                            <td class="d-flex">
-                                <a href="{{ route('users.edit', $user->id) }}"
-                                   class="btn btn-info mr-2" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="{{ route('users.destroy' , $user->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger"
-                                            onclick="confirm('If you delete this user it will automatically delete all his posts. Are you sure?') || event.stopImmediatePropagation()"
-                                            title="Delete">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </form>
-                            </td>
+                            @can('admin-access')
+                                <td class="d-flex">
+
+                                    <a href="{{ route('users.edit', $user->id) }}"
+                                       class="btn btn-info mr-2" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="{{ route('users.destroy' , $user->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger"
+                                                onclick="confirm('If you delete this user it will automatically delete all his posts. Are you sure?') || event.stopImmediatePropagation()"
+                                                title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                                @endcan
+
                         </tr>
                     @endforeach
                     </tbody>

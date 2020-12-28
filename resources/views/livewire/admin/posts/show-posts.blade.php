@@ -54,7 +54,7 @@
                         <th style="width: 10%">Image</th>
                         <th style="width: 10%">User</th>
                         <th style="width: 5%">Category</th>
-                        <th style="width: 10%">Published</th>
+                        @can('admin-access')<th style="width: 10%">Published</th>@endcan
                         <th style="width: 15%">
                             <div wire:click="sortBy('created_at')">
                                 Created At
@@ -74,9 +74,11 @@
                             <td ><img src="{{  asset('storage/' .$post->image) }}" alt="" height="60" width="90"></td>
                             <td>{{ $post->user->name }}</td>
                             <td>{{ $post->category->name }}</td>
-                            <td class="pb-0">
-                                <livewire:admin.posts.publish-post :post="$post" :key="'admin.posts.publish-post'.$post->id" />
-                            </td>
+                            @can('admin-access')
+                                <td class="pb-0">
+                                    <livewire:admin.posts.publish-post :post="$post" :key="'admin.posts.publish-post'.$post->id" />
+                                </td>
+                            @endcan
                             <td>{{ $post->created_at }}</td>
                             <td class="d-flex">
                                 <a href="" title="Visit" class="btn btn-primary btn">
@@ -86,14 +88,15 @@
                                     <i class="fas fa-edit"></i>
                                 </a>
 
-                                <button wire:click="delete({{ $post->id }})"
-                                        onclick="confirm('Are you sure you want to delete this post?') || event.stopImmediatePropagation()"
-                                        class="btn btn-danger btn ml-2"
-                                        title="Delete">
+                                @can('admin-access')
+                                    <button wire:click="delete({{ $post->id }})"
+                                            onclick="confirm('Are you sure you want to delete this post?') || event.stopImmediatePropagation()"
+                                            class="btn btn-danger btn ml-2"
+                                            title="Delete">
 
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                                </form>
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach

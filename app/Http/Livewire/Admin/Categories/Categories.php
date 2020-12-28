@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\Admin\Categories;
 
 use App\Models\Category;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
+use Symfony\Component\HttpFoundation\Response;
 
 class Categories extends Component
 {
@@ -38,6 +40,8 @@ class Categories extends Component
 
     public function delete($categoryId)
     {
+        abort_if(Gate::denies('admin-access'), Response::HTTP_FORBIDDEN);
+
         $category = Category::findOrFail($categoryId);
         $category->delete();
     }

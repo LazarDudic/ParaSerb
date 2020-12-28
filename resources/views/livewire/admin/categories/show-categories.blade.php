@@ -50,7 +50,7 @@
                                 Created At<i class="ml-1 pointer fas fa-arrow-circle-{{ $sortField === 'created_at' ? ($sortDirection === 'asc' ? 'up' : 'down') : 'down' }}"></i>
                             </div>
                         </th>
-                        <th style="width: 10%"s>Action</th>
+                        @can('admin-access')<th style="width: 10%"s>Action</th>@endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -60,6 +60,7 @@
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->posts->count() }}</td>
                             <td>{{ $category->created_at }}</td>
+                            @can('admin-access')
                             <td class="d-flex">
                                 <a href="{{ route('categories.edit', $category->id) }}"
                                    class="btn btn-info mr-2" title="Edit">
@@ -71,6 +72,7 @@
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </td>
+                            @endcan
                         </tr>
                     @endforeach
                     </tbody>
