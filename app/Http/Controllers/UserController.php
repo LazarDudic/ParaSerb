@@ -86,18 +86,4 @@ class UserController extends Controller
         return back()->withSuccess('User updated');
     }
 
-    /**
-     * Remove the specified user from storage.
-     *
-     * @param User $user
-     * @return void
-     */
-    public function destroy(User $user)
-    {
-        abort_if(Gate::denies('admin-access'), Response::HTTP_FORBIDDEN);
-
-        $user->delete();
-        return redirect(route('users.index'))
-            ->withSuccess('User deleted.');
-    }
 }

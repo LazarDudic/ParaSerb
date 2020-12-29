@@ -51,17 +51,9 @@
                                        class="btn btn-info mr-2" title="Edit">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="{{ route('users.destroy' , $user->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger"
-                                                onclick="confirm('If you delete this user it will automatically delete all his posts. Are you sure?') || event.stopImmediatePropagation()"
-                                                title="Delete">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                    <livewire:admin.users.delete-user :user="$user"/>
                                 </td>
-                                @endcan
+                            @endcan
 
                         </tr>
                     @endforeach
