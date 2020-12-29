@@ -7,6 +7,7 @@
             <li class="breadcrumb-item"><a href="{{ route('profile.show', $user->id) }}">Profile</a></li>
             <li class="breadcrumb-item active"></li>
         </ol>
+        @include('partials.message')
 
         <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -20,7 +21,6 @@
                     @endif
                 </div>
             </div>
-
             <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                 <tr>
                     <th>Name:</th>

@@ -34,13 +34,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name">Password:</label>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('name') ??  $user->name ?? '' }}">
+                                <label for="name">{{ isset($user) ? 'New ' : '' }}Password:</label>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" >
                                 @error('password')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                             </div>
                             <div class="form-group">
-                                <label for="name">Password Confirm:</label>
-                                <input type="password" class="form-control" name="password_confirmation" value="{{ old('name') ??  $user->name ?? '' }}">
+                                <label for="name">{{ isset($user) ? 'New ' : '' }}Password Confirm:</label>
+                                <input type="password" class="form-control" name="password_confirmation">
                             </div>
 
                             <div>
