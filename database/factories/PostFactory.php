@@ -26,10 +26,11 @@ class PostFactory extends Factory
             'title' => $this->faker->unique()->word,
             'content' => $this->faker->paragraph,
             'slug' => $this->faker->unique()->word,
-            'image' => $this->faker->unique()->imageUrl(),
+            'image' => $this->faker->imageUrl(),
             'published_at' => now(),
             'user_id' => 1,
             'category_id' => $this->faker->numberBetween(1, 10),
+            'created_at' => time() + rand(100, 100000),
 
         ];
     }
