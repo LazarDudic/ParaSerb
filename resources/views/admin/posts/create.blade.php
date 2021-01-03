@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="content">Content</label>
-                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" rows="6">{{ old('content') ?? $post->content ?? '' }}</textarea>
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" rows="15">{{ old('content') ?? $post->content ?? '' }}</textarea>
                                 @error('content')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                             </div>
 
@@ -86,8 +86,8 @@
     <script>
         tinymce.init({
             selector: 'textarea',
-            plugins: 'link',
-            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent link',
+            plugins: 'link | codesample',
+            toolbar: 'codesample | undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent link',
 
         });
     </script>
