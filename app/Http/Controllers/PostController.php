@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Posts\CreatePostRequest;
+use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -49,16 +49,22 @@ class PostController extends Controller
 
     }
 
-//    /**
-//     * Display the specified post.
-//     *
-//     * @param  \App\Models\Post  $post
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function show(Post $post)
-//    {
-//
-//    }
+    /**
+     * Display the specified post.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Post $post)
+    {
+        $latesNews = Post::latest()->take(3)->get();
+
+        return view('posts.show', [
+            'post' => $post,
+            'categories' => Category::all(),
+            'latestNews' => $latesNews
+        ]);
+    }
 
     /**
      * Show the form for editing the specified post.
@@ -80,7 +86,7 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdatePostRequest $request, Post $post)
     {
         $data = $request->only(['title', 'content', 'category_id']);
         $data['slug'] = Str::slug($request->title);

@@ -293,9 +293,17 @@ html body {
 
 }
 
+.post-image {
+    object-fit: contain;
+    width: 100%;
+    max-height: 500px;
+    padding: 0;
+}
+
 /* End Section Contact */
 
 #footer {
+
     width: 100%;
     text-align: center;
     background-image: linear-gradient(to right, rgb(0, 110, 255) , rgb(0, 162, 255));

@@ -13,14 +13,18 @@
     @livewireStyles
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <title> @isset($title)
+    <title>
+        @if(isset($title))
             {{ $title }}
-        @endisset</title>
+        @else
+            @yield('title')
+        @endisset
+    </title>
 </head>
 <body>
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-custom">
-    <a class="navbar-brand" href="#">Paragliding Serbia</a>
+    <a class="navbar-brand" href="/">Paragliding Serbia</a>
     <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,7 +32,7 @@
     <div class="collapse navbar-collapse pl-3" id="navbarTogglerDemo03">
         <ul class="navbar-nav ml-auto mr-3">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Novosti</a>
@@ -40,7 +44,7 @@
                 <a class="nav-link" href="#">Galerija</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#contact">Kontakt</a>
+                <a class="nav-link" href="/#contact">Kontakt</a>
             </li>
         </ul>
         <form>
@@ -52,7 +56,7 @@
 @yield('content')
 
 <section id="footer">
-    <p>&copy;  {{ date('Y') }} Paragliding Serbia</p>
+    &copy;  {{ date('Y') }} Paragliding Serbia
 </section>
 
 </body>
