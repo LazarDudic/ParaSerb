@@ -38,7 +38,7 @@ class CategoryController extends Controller
     /**
      * Display the specified post.
      *
-     * @param  \App\Models\Post  $post
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified category.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Post  $category
      * @return \Illuminate\View\View
      */
     public function edit(Category $category)

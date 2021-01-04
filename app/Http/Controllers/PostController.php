@@ -10,8 +10,6 @@ use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-
-
     /**
      * Show the form for creating a new post.
      *
@@ -25,7 +23,7 @@ class PostController extends Controller
     /**
      * Store a newly created post in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CreatePostRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(CreatePostRequest $request)
@@ -52,7 +50,7 @@ class PostController extends Controller
     /**
      * Display the specified post.
      *
-     * @param  \App\Models\Post  $post
+     * @param $slug
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
@@ -83,8 +81,8 @@ class PostController extends Controller
     /**
      * Update the specified post in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param UpdatePostRequest $request
+     * @param \App\Models\Post $post
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePostRequest $request, Post $post)
