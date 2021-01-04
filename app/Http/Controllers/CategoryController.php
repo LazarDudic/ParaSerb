@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Categories\CreateCategoryRequest;
 use App\Http\Requests\Categories\UpdateCategoryRequest;
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -34,6 +35,23 @@ class CategoryController extends Controller
         return redirect(route('categories.show-categories'))->withSuccess('Category added.');
     }
 
+    /**
+     * Display the specified post.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Category $category)
+    {
+        $latestPosts = Post::orderByDesc('published_at')->take(3)->get();
+
+        return view('categories.show', [
+            'posts' => $category->posts()->paginate(7),
+            'categoryName' => $category->name,
+            'categories' => Category::all(),
+            'latestPosts' => $latestPosts
+        ]);
+    }
 
     /**
      * Show the form for editing the specified category.
@@ -62,6 +80,4 @@ class CategoryController extends Controller
 
         return back()->withSuccess('Category updated.');
     }
-
-
 }

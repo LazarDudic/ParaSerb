@@ -19,13 +19,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Public
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
-
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 Auth::routes();
 
+// Auth
 Route::middleware('auth')->group(function () {
     Route::get('/posts', Posts::class)->name('posts.show-posts');
     Route::get('/categories', Categories::class)->name('categories.show-categories');
@@ -38,7 +40,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('/profile', ProfileController::class)
         ->only(['show', 'edit', 'update'])
         ->parameters(['profile' => 'user']);;
-
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
