@@ -55,14 +55,15 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($slug)
     {
-        $latesNews = Post::latest()->take(3)->get();
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $latestPosts = Post::orderByDesc('published_at')->take(3)->get();
 
         return view('posts.show', [
             'post' => $post,
             'categories' => Category::all(),
-            'latestNews' => $latesNews
+            'latestPosts' => $latestPosts
         ]);
     }
 

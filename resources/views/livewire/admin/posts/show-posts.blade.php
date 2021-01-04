@@ -81,7 +81,7 @@
                             @endcan
                             <td>{{ $post->created_at }}</td>
                             <td class="d-flex">
-                                <a href="{{ route('posts.show', $post->id) }}" target="_blank" title="Visit" class="btn btn-primary btn">
+                                <a href="{{ route('posts.show', $post->slug) }}" target="_blank" title="Visit" class="btn btn-primary btn">
                                     <i class="far fa-eye"></i>
                                 </a>
                                 <a href="{{ route('posts.edit', $post->id) }}" title="Edit" class="btn btn-warning ml-2">

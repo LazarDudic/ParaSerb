@@ -33,11 +33,9 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4 pt-5">
+        <div class="col-md-4 mt-5">
 
             <!-- Categories Widget -->
-
-
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-header">
                     Kategorije
@@ -45,22 +43,23 @@
                 <ul class="list-group list-group-flush">
                     @forelse($categories as $category)
                         <li class="list-group-item p-2 ">
-                            <a href="#">{{ $category->name }}</a>
+                            <a href="{{ route('categories.show', $category->id) }}">{{ $category->name }}</a>
                         </li>
                     @empty
                     @endforelse
                 </ul>
             </div>
 
+            <!-- Last Posts Widget -->
             <div class="mt-3">
                 <h4>Poslednje Novosti</h4>
                 <hr>
                 <ul class="list-styled">
-                    @foreach($latestNews as $post)
+                    @foreach($latestPosts as $post)
                     <li class="media mb-3">
                         <img class="d-flex mr-3 rounded" width="64" height="64" src="{{ asset('storage/' .$post->image) }}" alt="{{ $post->title }}">
                         <div class="media-body">
-                            <h5 class="mt-0 mb-1"><a href="#">{{ $post->title }}</a></h5> {{ $post->published_at }}
+                            <h5 class="mt-0 mb-1"><a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a></h5> {{ $post->published_at }}
                         </div>
                     </li>
                     @endforeach
