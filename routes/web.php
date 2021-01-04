@@ -25,6 +25,7 @@ Route::get('/', function () {
 });
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/all-categories', [CategoryController::class, 'showAll'])->name('all-categories');
 Auth::routes();
 
 // Auth
@@ -33,7 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/categories', Categories::class)->name('categories.show-categories');
     Route::get('/posts/{post}/remove-image', [PostController::class, 'removeImage'])->name('posts.remove-image');
     Route::resource('/categories', CategoryController::class)
-        ->only(['show', 'create', 'store', 'edit', 'update']);;
+        ->only(['create', 'store', 'edit', 'update']);;
     Route::resource('/users', UserController::class);
     Route::resource('/posts', PostController::class)
         ->only(['show', 'create', 'store', 'edit', 'update']);

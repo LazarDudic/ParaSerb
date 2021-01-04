@@ -54,6 +54,23 @@ class CategoryController extends Controller
     }
 
     /**
+     * Display the all posts from all categories.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAll()
+    {
+        $posts = Post::orderByDesc('published_at')->paginate(7);
+        $latestPosts = Post::orderByDesc('published_at')->take(3)->get();
+
+        return view('categories.show', [
+            'posts' => $posts,
+            'categories' => Category::all(),
+            'latestPosts' => $latestPosts
+        ]);
+    }
+
+    /**
      * Show the form for editing the specified category.
      *
      * @param  \App\Models\Post  $category
@@ -80,4 +97,5 @@ class CategoryController extends Controller
 
         return back()->withSuccess('Category updated.');
     }
+
 }

@@ -35,7 +35,7 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Novosti</a>
+                <a class="nav-link" href="{{ route('all-categories') }}">Novosti</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Tandemi</a>
