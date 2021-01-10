@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 Route::get('/all-categories', [CategoryController::class, 'showAll'])->name('all-categories');
 Auth::routes();
@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
         ->only(['create', 'store', 'edit', 'update']);;
     Route::resource('/users', UserController::class);
     Route::resource('/posts', PostController::class)
-        ->only(['show', 'create', 'store', 'edit', 'update']);
+        ->only(['create', 'store', 'edit', 'update']);
     Route::resource('/profile', ProfileController::class)
         ->only(['show', 'edit', 'update'])
         ->parameters(['profile' => 'user']);;
