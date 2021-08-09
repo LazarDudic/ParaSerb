@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <h2 class="card-title">{{ $post->title }}</h2>
                             <p class="card-text">{!! substr($post->content, 0, 100) !!}...</p>
-                            <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-primary">Read More &rarr;</a>
+                            <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-primary">Procitaj &rarr;</a>
                         </div>
                         <div class="card-footer text-muted">
                             Objavljeno: {{ date('d. m. Y', strtotime($post->published_at)) }}
@@ -63,7 +63,7 @@
                             <li class="media mb-3">
                                 <img class="d-flex mr-3 rounded" width="64" height="64" src="{{ asset('storage/' .$post->image) }}" alt="{{ $post->title }}">
                                 <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a></h5> {{ $post->published_at }}
+                                    <h5 class="mt-0 mb-1"><a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a></h5> {{ date('d. m. Y', strtotime($post->published_at)) }}
                                 </div>
                             </li>
                         @endforeach
