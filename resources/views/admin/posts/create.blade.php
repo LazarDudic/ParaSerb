@@ -65,11 +65,12 @@
                             </div>
 
 
+                            <livewire:admin.posts.add-galery />
+
                             <div class="form-check mt-3 mb-3">
-                                <input class="form-check-input" type="checkbox" value="{{ $post->published_at ?? '' }}"
-                                       {{ isset($post->published_at) ? 'checked' : '' }}
-                                       name="published_at" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
+                                <input class="form-check-input" type="checkbox" {{ isset($post->published_at) || old('published_at') ? 'checked' : '' }}
+                                       name="published_at" id="published-check-box">
+                                <label class="form-check-label" for="published-check-box">
                                     Publish Post
                                 </label>
                             </div>

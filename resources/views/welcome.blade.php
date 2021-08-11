@@ -37,28 +37,34 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="thumbnail">
                     <h4><strong>Tandem Letovi</strong></h4>
-                    <a href="#">
-                        <div class="card-img-top"><a href="https://assets.weforum.org/community/image/7TIt0OZ7hNUP1TNJrHHQOCriP9rSR4d9toQR7EB2gU8.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://source.unsplash.com/random/201x20{{ rand(0, 9)}}"></a></div>
-                        <i class="fas fa-camera"></i>
-                    </a>
+                    <div class="card-img-top">
+                        <a href="https://assets.weforum.org/community/image/7TIt0OZ7hNUP1TNJrHHQOCriP9rSR4d9toQR7EB2gU8.jpg" data-lightbox="takmicenja">
+                            <img class="img-fluid" src="https://source.unsplash.com/random/201x20{{ rand(0, 9)}}">
+                            <i class="fas fa-camera"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="thumbnail">
                     <h4><strong>Paraglajding</strong></h4>
-                    <a href="#">
-                        <img class="card-img-top" src="https://source.unsplash.com/random/201x20{{ rand(0, 9)}}" alt="" height="250">
-                        <i class="fas fa-camera"></i>
-                    </a>
+                    <div class="card-img-top">
+                        <a href="https://assets.weforum.org/community/image/7TIt0OZ7hNUP1TNJrHHQOCriP9rSR4d9toQR7EB2gU8.jpg" data-lightbox="takmicenja">
+                            <img class="img-fluid" src="https://source.unsplash.com/random/201x20{{ rand(0, 9)}}">
+                            <i class="fas fa-camera"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="thumbnail">
                     <h4><strong>Takmicenja</strong></h4>
-                    <a href="#">
-                        <img class="card-img-top" src="https://source.unsplash.com/random/201x20{{ rand(0, 9)}}" alt="" height="250">
-                        <i class="fas fa-camera"></i>
-                    </a>
+                        <div class="card-img-top">
+                            <a href="https://assets.weforum.org/community/image/7TIt0OZ7hNUP1TNJrHHQOCriP9rSR4d9toQR7EB2gU8.jpg" data-lightbox="takmicenja">
+                                <img class="img-fluid" src="https://source.unsplash.com/random/201x20{{ rand(0, 9)}}">
+                                <i class="fas fa-camera"></i>
+                            </a>
+                        </div>
                 </div>
             </div>
         </div>
@@ -76,21 +82,25 @@
     <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
     <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
     <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
-    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="tandemi"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+</div>
+<div class="d-none ">
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="paragliding"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+</div>
+<div class="d-none ">
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="takmicenja"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="takmicenja"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="takmicenja"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="takmicenja"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="takmicenja"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
+    <div class="item"><a href="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg" data-lightbox="takmicenja"><img class="img-fluid" src="https://i.pinimg.com/originals/c4/76/27/c476278504682e622fabe9b0932098c3.jpg"></a></div>
 </div>
 @endsection
 

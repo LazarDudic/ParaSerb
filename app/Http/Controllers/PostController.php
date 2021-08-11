@@ -32,15 +32,16 @@ class PostController extends Controller
         {
             $image = $request->image->store('posts', 'public');
         }
-
-        Post::create([
+    
+        $post = Post::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'content' => $request->content,
             'image' => $image ?? null,
+            'galery' => json_encode($request->galery),
             'user_id' => auth()->user()->id,
             'category_id' => $request->category_id,
-            'published_at' => $request->published_at ? now() : null
+            'published_at' => $request->published_at ? time() : null
         ]);
 
         return redirect(route('posts.show-posts'))->withSuccess('Post added.');

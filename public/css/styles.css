@@ -119,13 +119,13 @@ html {
     padding-bottom: 1rem;
 }
 
-
 #posts .see-more button {
     padding: 0.5rem;
     transition: 0.3s;
     cursor: pointer;
     color: #ffffff;
     text-decoration: none;
+    border-radius: 10px;
     background-color: rgba(2, 79, 246, 0.86);
 
 }

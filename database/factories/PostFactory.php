@@ -30,7 +30,7 @@ class PostFactory extends Factory
             'published_at' => now(),
             'user_id' => 1,
             'category_id' => $this->faker->numberBetween(1, 10),
-            'created_at' => time() + rand(100, 100000),
+            'created_at' => time() - rand(100, 100000),
 
         ];
     }
