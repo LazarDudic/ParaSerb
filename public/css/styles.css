@@ -40,12 +40,12 @@ html {
     padding-left: 10%;
     font-size: 1.6rem;
     font-weight: 600;
-    color: rgb(83, 221, 129);
+    color: rgb(110, 161, 255);
     font-family: 'Kaushan Script', cursive ;
 }
 
 .bg-custom .navbar-brand:hover{
-    color: rgb(140, 245, 175);
+    color: rgb(88, 123, 187);
 }
 
 .bg-custom .navbar-toggler {
@@ -60,7 +60,7 @@ html {
 
 .bg-custom .navbar-nav .nav-link:hover {
     transition: 0.2s;
-    color: rgb(117, 117, 117);
+    color: rgb(110, 161, 255);
 }
 
 
@@ -80,7 +80,7 @@ html {
 #posts h1 {
     padding: 0.5rem;
     font-family: 'Roboto Slab', serif;
-    color: #616161;
+    color: rgb(110, 161, 255);
 
 }
 
@@ -106,6 +106,8 @@ html {
 #posts .card-title a{
     text-decoration: none;
     font-weight: 600;
+    color: rgb(66, 94, 144);
+
 }
 
 #posts .date {
@@ -119,6 +121,7 @@ html {
     padding-bottom: 1rem;
 }
 
+
 #posts .see-more button {
     padding: 0.5rem;
     transition: 0.3s;
@@ -126,12 +129,12 @@ html {
     color: #ffffff;
     text-decoration: none;
     border-radius: 10px;
-    background-color: rgba(2, 79, 246, 0.86);
+    background-color: rgb(75, 123, 224);
 
 }
 
 #posts .see-more button:hover {
-    box-shadow: 3px 3px 3px 3px #888888;
+    box-shadow: 2px 2px 3px 3px #888888;
     background-color: rgba(2, 40, 124, 0.863);
 
 }
@@ -153,8 +156,44 @@ html {
     background-color: rgb(29, 57, 1);
 
 }
-/* End Post Section */
+/* End Posts Section */
 
+/* Single Post */
+/* .post-container {
+    position:relative;
+} */
+
+.post-container .post-image {
+    float: left;
+    width: 400px; 
+    height: 350px;
+    padding: 0 30px 30px 0;
+}
+
+.post-galery img {
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    object-fit:cover;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+
+.post-galery img:hover {
+    -webkit-transform: scale(1.05); 
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+    box-shadow: 5px 10px 10px #888888;
+}
+
+.post-content {
+    letter-spacing: 1px;
+}
+
+/* End Single Post*/
 
 /* Galery Section */
 
@@ -180,6 +219,10 @@ html {
 .thumbnail {
     padding: 0 0 15px 0;
     position: relative;
+}
+
+.thumbnail h4{
+    color: rgb(44, 64, 100);
 }
 
 .thumbnail img {
@@ -216,7 +259,7 @@ html {
 }
 .contact-title {
     padding: 10px;
-    color: #616161;
+    color: rgb(110, 161, 255);
 
 }
 
@@ -234,20 +277,22 @@ html {
 }
 
 
-.contact-button {
-    margin: auto;
-    border-radius: 20px;
-    padding: 0.8rem;
-    color: white;
-    text-decoration: none;
-    background-color: rgba(2, 79, 246, 0.863);
 
+
+.contact-button {
+    padding: 0.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: rgb(75, 123, 224)
 }
 
 .contact-button:hover {
-    box-shadow: 3px 3px 3px 3px #888888;
+    box-shadow: 2px 2px 3px 3px #888888;
     background-color: rgba(2, 40, 124, 0.863);
-    cursor: pointer;
+    color: #ffffff;
 
 }
 
@@ -293,12 +338,17 @@ html {
 
 }
 
-.post-image {
+.card .post-image {
     object-fit: contain;
     width: 100%;
     max-height: 500px;
     padding: 0;
 }
+
+.anchor {
+    position: absolute;
+    transform: translateY(-50vh);
+  }
 
 /* End Section Contact */
 
@@ -311,7 +361,7 @@ html {
 
 
 .lightbox {
-    margin-top: 60px;
+    margin-top: 40px;
 }
 .lb-nav a.lb-next, a.lb-prev {
     opacity: 1 !important;
@@ -334,6 +384,14 @@ html {
 
     #posts .new-old {
         width: 40%;
+    }
+}
+
+@media  (max-width: 576px) {
+    .post-container .post-image {
+        float: left;
+        width: 100%; 
+        padding-right: 0;
     }
 }
 

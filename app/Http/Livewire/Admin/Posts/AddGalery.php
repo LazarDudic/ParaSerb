@@ -9,9 +9,19 @@ class AddGalery extends Component
     public $addGalery = false;
     public $photoCount = 3;
     public $oldGalery = null;
+    public $post;
 
-    public function __construct()
+    public function mount($post = null)
     {
+        $this->post = $post;
+
+        if($post) {
+            if($post->galery) {
+                $this->addGalery = true;
+                $this->oldGalery = json_decode($post->galery);
+            }
+        }
+
         if(old('galery')) {
             $this->addGalery = true;
             $this->oldGalery = old('galery');
@@ -37,7 +47,9 @@ class AddGalery extends Component
         if ($this->oldGalery) {
             array_pop($this->oldGalery);
         } else {
-            $this->photoCount--;
+            if($this->photoCount > 1) {
+                $this->photoCount--;
+            }   
         }
     }
 

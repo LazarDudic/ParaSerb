@@ -27,6 +27,7 @@ class UpdatePostRequest extends FormRequest
             'title' => 'required|max:255|unique:posts,title,' . $this->post->id,
             'content' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048|nullable',
+            'galery' => 'nullable|array',
             'category_id' => 'required|integer|exists:categories,id'
         ];
     }

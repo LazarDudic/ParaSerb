@@ -65,7 +65,8 @@
                             </div>
 
 
-                            <livewire:admin.posts.add-galery />
+                            <livewire:admin.posts.add-galery :post="$post" />
+                            @error('galery')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 
                             <div class="form-check mt-3 mb-3">
                                 <input class="form-check-input" type="checkbox" {{ isset($post->published_at) || old('published_at') ? 'checked' : '' }}

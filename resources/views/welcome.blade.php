@@ -25,14 +25,13 @@
       </div>
 </section>
 
-<section id="posts">
-    <h1>Novosti</h1>
+<section id="posts" class="pt-3">
     <livewire:welcome-posts />
 </section>
 
 <section id="galery">
-    <div class="container-fluid text-center bg-grey">
-         <h1>Galerija</h1> 
+    <span class="anchor" id="galery-scroll"></span>
+    <div class="container-fluid text-center bg-grey py-4">
         <div class="row text-center">
             <div class="col-lg-4 col-sm-6">
                 <div class="thumbnail">
@@ -110,6 +109,9 @@
         $("#carousel-slider").carousel({
             interval: 4000
         });
-
+        $(document).scroll(function () {
+            var $nav = $(".navbar-fixed-top");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
     </script>
 @endsection

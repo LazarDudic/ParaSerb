@@ -18,7 +18,8 @@
                 <!-- Blog Post -->
                 @forelse($posts as $post)
                     <div class="card mb-4">
-                        <img class="card-img-top post-image" height="300" src="{{ asset('storage/' .$post->image) }}" alt="Card image cap">
+                        
+                        <img class="card-img-top post-image" src="{{ asset('storage/' .$post->image) }}" alt="Card image cap">
                         <div class="card-body">
                             <h2 class="card-title">{{ $post->title }}</h2>
                             <p class="card-text">{!! substr($post->content, 0, 100) !!}...</p>

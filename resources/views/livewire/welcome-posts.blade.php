@@ -35,7 +35,7 @@
     </div>
     <div class="see-more">
         @if($posts->count() == $paginate)
-            <button wire:click="seeMore(3)">Pogledaj još >></button>
+            <button class="btn" wire:click="seeMore(3)">Pogledaj još >></button>
         @else
             <p>Nema više postova.</p>
         @endif

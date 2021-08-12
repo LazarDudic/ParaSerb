@@ -39,7 +39,7 @@
                 </div>
                 <div class="text-center">
                     <div class="text-success mb-2">{{ session()->get('success') }}</div>
-                    <button class="btn btn-primary text-uppercase" type="submit">Pošalji</button>
+                    <button class="btn contact-button text-uppercase" type="submit">Pošalji</button>
                 </div>
             </form>
         </div>

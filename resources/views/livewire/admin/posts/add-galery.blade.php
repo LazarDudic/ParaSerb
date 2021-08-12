@@ -14,8 +14,8 @@
     
 
         <div class="d-flex pt-2">
-            <button class="btn btn-sm btn-success mr-2" wire:click.prevent="addInput()">Add Input</button>
-            <button class="btn btn-sm btn-warning" wire:click.prevent="removeInput()">Remove Input</button>
+            <button class="btn btn-sm btn-link mr-2" wire:click.prevent="addInput()">Add Input</button>
+            <button class="btn btn-sm btn-link text-danger" wire:click.prevent="removeInput()">Remove Input</button>
         </div>
     @endif
 </div>

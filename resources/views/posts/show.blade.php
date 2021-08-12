@@ -8,7 +8,7 @@
     <div class="row pt-5">
 
         <!-- Post Content Column -->
-        <div class="col-lg-8">
+        <div class="col-lg-9 post-container">
 
             <!-- Title -->
             <h1 class="mt-5 text-center">{{ $post->title }}</h1>
@@ -19,24 +19,47 @@
             <p class="text-right">Objavljeno: {{ date('d. m. Y', strtotime($post->published_at)) }}</p>
 
             <hr>
-
-            <!-- Preview Image -->
             @if($post->image)
                 <img class="rounded mx-auto d-block post-image"  src="{{ asset('storage/' .$post->image) }}" alt="{{ $post->title }}">
                 <hr>
             @endif
-            <!-- Post Content -->
 
-            {!! html_entity_decode($post->content) !!}
+            <!-- Preview Image -->
+            {{-- <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. A cupiditate blanditiis autem laborum ipsa. At alias praesentium quis maiores quas, necessitatibus rem error ratione veniam. Delectus aperiam laudantium optio modi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ut, dolorem earum aperiam exercitationem obcaecati reprehenderit 
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quod distinctio non, tempore, consectetur voluptatibus eum mollitia ipsam hic doloremque qui commodi laudantium perspiciatis pariatur esse dolores nobis repudiandae magni. cum blanditiis incidunt rerum labore odit, possimus, expedita id! Suscipit corrupti natus facere atque.
+            </div> --}}
+            <!-- Post Content -->
+            <div class="post-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident cupiditate perspiciatis quas, distinctio vero obcaecati illum repellat alias tempore tempora itaque animi fuga, consectetur quaerat recusandae exercitationem molestias beatae ipsa?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia cupiditate exercitationem porro fuga, nemo delectus aliquid commodi at fugiat eius totam, veritatis vitae provident et eos ex, quisquam praesentium tenetur.
+                {!! html_entity_decode($post->content) !!}
+            </div>
+
+            @if ($post->galery)
+            <div class="row pt-5" style="clear:both;">
+                @forelse (json_decode($post->galery) as $photo)
+                
+                    <div class="col-xl-4 col-md-6  col-sm-12 post-galery mb-2">
+                        <a href="{{ $photo }}" data-lightbox="galery">
+                            <img class="img-fluid" src="{{ $photo }}" alt="{{ $post->title }}">
+                        </a>
+                    </div>
+                @empty
+                    
+                @endforelse
+            </div>
+
+            @endif
 
             <hr>
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4 mt-5">
+        <div class="col-md-3 mt-5">
 
             <!-- Categories Widget -->
-            <div class="card text-center" style="width: 18rem;">
+            <div class="card text-center">
                 <div class="card-header">
                     Kategorije
                 </div>

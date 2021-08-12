@@ -32,7 +32,6 @@ class PostController extends Controller
         {
             $image = $request->image->store('posts', 'public');
         }
-    
         $post = Post::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
@@ -88,7 +87,7 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        $data = $request->only(['title', 'content', 'category_id']);
+        $data = $request->validated();
         $data['slug'] = Str::slug($request->title);
         $data['published_at'] = $request->published_at ?: null;
 
@@ -96,6 +95,7 @@ class PostController extends Controller
             $data['image'] = $request->image->store('posts', 'public');
             $post->deleteImage();
         }
+
         $post->update($data);
         return back()->withSuccess('Post updated.');
     }

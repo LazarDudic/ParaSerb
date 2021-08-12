@@ -15,8 +15,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
-
-
     <title>
         @if(isset($title))
             {{ $title }}
@@ -45,7 +43,7 @@
                 <a class="nav-link" href="#">Tandemi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/#galery">Galerija</a>
+                <a class="nav-link" href="/#galery-scroll">Galerija</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/#contact">Kontakt</a>
@@ -76,14 +74,24 @@
 
 <script>
     $( window ).scroll(function() {
-        console.log($(window).scrollTop())
-        if($(window).height() < 1) {
+        var $nav = $(".fixed-top");
+        if($(this).scrollTop() < $nav.height()) {
             $( ".bg-custom" ).css("background-color", "rgb(0 0 0 / 75%)");
         } else {
             $( ".bg-custom" ).css("background-color", "rgb(0 0 0 / 90%)");
         }
     });
-});
+
+    // $( document ).scroll(function() {
+    //     console.log($(this).scrollTop())
+
+    //     var $nav = $(".fixed-top");
+    //     if($(this).scrollTop() > $nav.height())) {
+    //         $( ".bg-custom" ).css("background-color", "rgb(0 0 0 / 75%)");
+    //     } else {
+    //         $( ".bg-custom" ).css("background-color", "rgb(0 0 0 / 90%)");
+    //     }
+    // });
 </script>
 </html>
 
