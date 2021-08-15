@@ -64,7 +64,7 @@
 
                             </div>
 
-
+                            
                             <livewire:admin.posts.add-galery :post="$post" />
                             @error('galery')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
 

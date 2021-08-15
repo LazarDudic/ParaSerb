@@ -71,7 +71,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td class="text-left">{{ $post->title }}</td>
-                            <td ><img src="{{  asset('storage/' .$post->image) }}" alt="" height="60" width="90"></td>
+                            <td ><img src="{{  getImage($post->image) }}" alt="" height="60" width="90"></td>
                             <td>{{ $post->user->name }}</td>
                             <td>{{ $post->category->name }}</td>
                             @can('admin-access')

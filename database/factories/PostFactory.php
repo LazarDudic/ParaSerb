@@ -23,14 +23,13 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->unique()->word,
+            'title' => $this->faker->sentence(rand(4,10)),
             'content' => $this->faker->paragraph,
             'slug' => $this->faker->unique()->word,
-            'image' => $this->faker->imageUrl(),
+            'image' => null,
             'published_at' => now(),
             'user_id' => 1,
             'category_id' => $this->faker->numberBetween(1, 10),
-            'created_at' => time() - rand(100, 100000),
 
         ];
     }

@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <h2 class="contact-title">Kontakt</h2>
-            <i class="fas fa-phone-volume" aria-hidden="true">+3816412345678</i>
             <ul class="contact-icons">
+                <li><i class="fas fa-phone-volume" aria-hidden="true">+3816412345678</i></li>
                 <li><a href="#"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>

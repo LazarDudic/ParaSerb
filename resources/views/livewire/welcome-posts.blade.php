@@ -20,7 +20,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="card">
-                        <a href="{{ route('posts.show', $post->slug) }}"><img class="card-img-top" src="{{ asset('storage/' .$post->image) }}" alt="{{ $post->title }}" height="250"></a>
+                        <a href="{{ route('posts.show', $post->slug) }}"><img class="card-img-top" src="{{ getImage($post->image) }}" alt="{{ $post->title }}" height="250"></a>
                         <div class="card-body">
                             <h5 class="card-title"><a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a></h5>
                             <p class="card-text date"><small class="text-muted">{{ date("d.m.Y", strtotime($post->created_at)) }}</small></p>

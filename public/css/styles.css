@@ -7,7 +7,14 @@
 	margin: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: 'Roboto Slab', serif;
+    /* font-family: 'Roboto Slab', serif; */
+}
+
+a {
+    color: rgb(110, 161, 255);
+}
+a:hover {
+    color: rgb(88, 123, 187);
 }
 
 html {
@@ -73,7 +80,7 @@ html {
 #posts {
     width: 100%;
     text-align: center;
-    background :linear-gradient(90deg, rgb(224, 224, 224) 0%, rgb(253, 253, 253) 50%, rgb(224, 224, 224) 100%);
+    background :linear-gradient(rgb(197, 197, 197),rgb(253, 253, 253));
 }
 
 
@@ -159,15 +166,14 @@ html {
 /* End Posts Section */
 
 /* Single Post */
-/* .post-container {
-    position:relative;
-} */
-
+.post-title {
+    font-size: 2rem;
+}
 .post-container .post-image {
     float: left;
-    width: 400px; 
-    height: 350px;
-    padding: 0 30px 30px 0;
+    width: 350px; 
+    height: 300px;
+    margin: 10px 30px 30px 0;
 }
 
 .post-galery img {
@@ -182,10 +188,10 @@ html {
 }
 
 .post-galery img:hover {
-    -webkit-transform: scale(1.05); 
-    -moz-transform: scale(1.05);
-    -o-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.04); 
+    -moz-transform: scale(1.04);
+    -o-transform: scale(1.04);
+    transform: scale(1.04);
     box-shadow: 5px 10px 10px #888888;
 }
 
@@ -253,9 +259,39 @@ html {
 
 /* End Section Galery */
 
+/* Video section */
+#video {
+    width: 100%;
+    text-align: center;
+    background :linear-gradient(rgb(255, 255, 255),rgb(206, 206, 206));
+    padding: 20px 30px;
+}
+
+#video h1 {
+    color: #888888;
+}
+#video .modal-content {
+    top: 100px;
+}
+
+.video-hover {
+    transition: .3s ease-in-out;
+}
+.video-hover:hover {
+    -webkit-transform: scale(1.04); 
+    -moz-transform: scale(1.04);
+    -o-transform: scale(1.04);
+    transform: scale(1.04);
+    cursor: pointer;
+    box-shadow: 5px 8px 8px 5px #888888;
+}
+
+/* End Video Sectio0n
 /* Section Contact */
 #contact {
     padding-bottom: 50px;
+    background :linear-gradient(rgb(206, 206, 206),rgb(155, 155, 155));
+
 }
 .contact-title {
     padding: 10px;
@@ -286,13 +322,15 @@ html {
     color: #ffffff;
     text-decoration: none;
     border-radius: 10px;
-    background-color: rgb(75, 123, 224)
+    background-color: rgb(75, 123, 224);
 }
 
 .contact-button:hover {
     box-shadow: 2px 2px 3px 3px #888888;
     background-color: rgba(2, 40, 124, 0.863);
     color: #ffffff;
+    text-decoration: none;
+
 
 }
 
@@ -347,7 +385,7 @@ html {
 
 .anchor {
     position: absolute;
-    transform: translateY(-50vh);
+    transform: translateY(-35vh);
   }
 
 /* End Section Contact */
@@ -392,6 +430,10 @@ html {
         float: left;
         width: 100%; 
         padding-right: 0;
+    }
+
+    .post-title {
+        font-size: 1.5rem;
     }
 }
 

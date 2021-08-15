@@ -17,7 +17,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create')->with('categories', Category::all());
+
+        return view('admin.posts.create')
+            ->with('categories', Category::all())
+            ->with('post', null);
     }
 
     /**
@@ -37,10 +40,10 @@ class PostController extends Controller
             'slug' => Str::slug($request->title),
             'content' => $request->content,
             'image' => $image ?? null,
-            'galery' => json_encode($request->galery),
+            'galery' => $request->galery ? json_encode($request->galery) : null,
             'user_id' => auth()->user()->id,
             'category_id' => $request->category_id,
-            'published_at' => $request->published_at ? time() : null
+            'published_at' => $request->published_at ? now() : null
         ]);
 
         return redirect(route('posts.show-posts'))->withSuccess('Post added.');

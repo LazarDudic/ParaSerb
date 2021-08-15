@@ -60,7 +60,7 @@ class CategoryController extends Controller
      */
     public function showAll()
     {
-        $posts = Post::orderByDesc('published_at')->paginate(7);
+        $posts = Post::orderByDesc('published_at')->simplePaginate(7);
         $latestPosts = Post::orderByDesc('published_at')->take(3)->get();
 
         return view('categories.show', [

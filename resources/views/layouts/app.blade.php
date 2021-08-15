@@ -46,6 +46,9 @@
                 <a class="nav-link" href="/#galery-scroll">Galerija</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/#video-scroll">Video</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/#contact">Kontakt</a>
             </li>
         </ul>
@@ -81,17 +84,6 @@
             $( ".bg-custom" ).css("background-color", "rgb(0 0 0 / 90%)");
         }
     });
-
-    // $( document ).scroll(function() {
-    //     console.log($(this).scrollTop())
-
-    //     var $nav = $(".fixed-top");
-    //     if($(this).scrollTop() > $nav.height())) {
-    //         $( ".bg-custom" ).css("background-color", "rgb(0 0 0 / 75%)");
-    //     } else {
-    //         $( ".bg-custom" ).css("background-color", "rgb(0 0 0 / 90%)");
-    //     }
-    // });
 </script>
 </html>
 
